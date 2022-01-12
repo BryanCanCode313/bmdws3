@@ -1,0 +1,391 @@
+
+:root {
+  --blend-mode-2: soft-light;
+  --blend-mode-3: none;
+  --blend-mode-4: none;
+  --blend-mode-5: darken;
+  --blend-mode-6: screen;
+  --time-amin: 2.71s;
+  --gap-horizontal: 14.5em;
+  --gap-vertical: 10em;
+ }
+
+ *{
+  box-sizing: border-box;
+ }
+
+
+html {
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: black;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+   /* phone styles */
+
+   @media screen and (min-width: 350px) {
+
+  body {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+    .titlebox {
+      margin: auto;
+      height: 290px;
+      width: 85vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden; 
+    }
+
+        #tbox:hover {
+          cursor: pointer;
+        }
+
+        .bmdsymbol{
+          display: none;
+          margin: inherit;
+          position: inherit;
+        }
+
+        .bmdlogo {
+          margin: auto;
+          min-width: 330px;
+          min-height: 100px;
+          width: 800px;
+          max-width: 100%;
+          max-height: 100%;
+          padding: 2%;
+          position: absolute; 
+          background: #000;
+        }
+
+        .bmdlogo:hover {
+          transform: translate3d(2px, 1px, 0);
+        }
+
+        .bmdlogo:nth-child(2) {
+          background-blend-mode: var(--blend-mode-2);
+        }
+
+        .bmdlogo:nth-child(3) {
+          background-blend-mode: var(--blend-mode-3);
+        }
+
+
+        .titlebox:hover .bmdlog:nth-child(n+1) {
+          opacity: 1;
+        }
+           
+        .bmdlogo:nth-child(2n) {
+          opacity: 1;
+        } 
+        
+        .titlebox:hover .bmdlogo:nth-child(1) {
+          animation-name: glitch-anim-1-h;
+          animation-duration: calc(0.3 * var(--time-amin));
+          animation-timing-function: linear;
+          animation-delay: -1s; 
+          animation-iteration-count: 1;
+          animation-direction: normal; 
+        }
+
+        .titlebox:hover .bmdlogo:nth-child(2) {
+          transform: translate3d(5px, 10px,  0);
+          animation-name: glitch-anim-2-h;
+          animation-duration: calc(0.32 * var(--time-amin));
+          animation-timing-function: linear;
+          animation-delay: -1ms; 
+          animation-iteration-count: infinite;
+          animation-direction: normal; 
+          background-color: black; 
+          z-index: 2;
+        }
+
+        .titlebox:hover .bmdlogo:nth-child(3) {
+          transform: translate3d(-300px,100px,0); 
+          animation-name: glitch-anim-1-h;
+          animation-duration: calc(0.2 * var(--time-amin));
+          animation-timing-function: linear;
+          animation-delay: -6ms; 
+          animation-iteration-count: infinite;
+          animation-direction: normal; 
+          background-color: black;
+          z-index: 3;
+        }
+
+        .titlebox:hover .bmdlogo:nth-child(4) {
+          transform: translate3d(-400px,-60px,40px); 
+          animation-name: glitch-anim-2-h;
+          animation-duration: calc(0.513 * var(--time-amin));
+          animation-timing-function: linear;
+          animation-delay: -60ms; 
+          animation-iteration-count: infinite;
+          animation-direction: normal; 
+          background-color: black;
+          z-index: 4;
+        }
+
+        .titlebox:hover .bmdlogo:nth-child(5) {
+          transform: translate3d(90px,-100px,0); /* make a jquery method randomize the x and y dimensions w/ a certain range and domain */
+          animation-name: glitch-anim-3;
+          animation-duration: var(--time-amin);
+          animation-timing-function: linear;
+          animation-delay: -2s; 
+          animation-iteration-count: infinite;
+          animation-direction: normal;  
+          background-color: black;
+          border: 10px solid rgb(0, 4, 255);
+          z-index: 5;
+        }
+
+        .titlebox:hover .bmdlogo:nth-child(6) {
+          transform: translate3d(9px, 100px, 0); 
+          animation-name: glitch-anim-2-h;
+          animation-duration: calc(0.2 * var(--time-amin)); 
+          animation-timing-function: linear;
+          animation-delay: -35s; 
+          animation-iteration-count: infinite;
+          animation-direction: normal;  
+          background-color: rgba(255, 255, 255, 0.185);
+          border: 8px solid rgb(0, 0, 0);
+          z-index: 6;
+        }
+
+        @keyframes glitch-anim-1-h {
+          0% { 
+            opacity: 1;
+            transform: translate3d(0,0,0);
+            -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+            clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+          }
+          2% {
+            -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+            clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+          }
+          4% {
+            -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+            clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+          }
+          6% {
+            -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+            clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+          }
+          8% {
+            -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+            clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+          }
+          10% {
+            -webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+            clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+          }
+          12% {
+            -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+            clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+          }
+          14% {
+            -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+          }
+          16% {
+            -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+            clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+          }
+          18% {
+            -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+            clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+          }
+          20% {
+            -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+          }
+          21.9% {
+            opacity: 1;
+            transform: translate3d(var(--gap-horizontal),0,0);
+          }
+          22%, 100% {
+            opacity: 0;
+            transform: translate3d(0,0,0);
+            -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+            clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+          }
+        }
+
+        @keyframes glitch-anim-2-h {
+            0% { 
+              -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+              clip-path: polygon(0 2%, 70% 2%, 70% 5%, 0 5%);
+            }
+            10% {
+              -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+              clip-path: polygon(0 15%, 70% 15%, 70% 15%, 0 15%);
+            }
+            20% {
+              -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+              clip-path: polygon(0 10%, 70% 10%, 70% 20%, 0 20%);
+            }
+            30% {
+              -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+              clip-path: polygon(0 1%, 70% 1%, 70% 2%, 0 2%);
+            }
+            40% {
+              -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+              clip-path: polygon(0 33%, 70% 33%, 70% 33%, 0 33%);
+            }
+            50% {
+              -webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+              clip-path: polygon(0 44%, 70% 44%, 70% 44%, 0 44%);
+            }
+            60% {
+              -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+              clip-path: polygon(0 50%, 70% 50%, 70% 20%, 0 20%);
+            }
+            70% {
+              -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+              clip-path: polygon(0 70%, 70% 70%, 70% 70%, 0 70%);
+            }
+            80% {
+              -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+              clip-path: polygon(0 80%, 70% 80%, 70% 80%, 0 80%);
+            }
+            90% {
+              -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+              clip-path: polygon(0 50%, 70% 50%, 70% 55%, 0 55%);
+            }
+            100% {
+            -webkit-clip-path:polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 70% 70%, 70% 80%, 0 80%);
+            } 
+        }   
+
+        @keyframes glitch-anim-3 {
+          0% { 
+            opacity: 1;
+            -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+            clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+          }
+          1.5% {
+            -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+            clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+          }
+          2% {
+            -webkit-clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+            clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+          }
+          2.5% {
+            -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+          }
+          3% {
+            -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+            clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+          }
+          5% {
+            -webkit-clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+            clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+          }
+          5.5% {
+            -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+            clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+          }
+          7% {
+            -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+            clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+          }
+          8% {
+            -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+          }
+          9% {
+            -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+            clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+          }
+          10.5% {
+            -webkit-clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+            clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+          }
+          11% {
+            -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+          }
+          13% {
+            -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+            clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+          }
+          14% {
+            -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+            clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+          }
+          14.5% {
+            -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+            clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+          }
+          15% {
+            -webkit-clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+            clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+          }
+          16% {
+            -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+            clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+          }
+          18% {
+            -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+          }
+          20% {
+            -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+          }
+          21.9% {
+            opacity: 1;
+            transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1);
+          }
+          22%, 100% {
+            opacity: 0;
+            transform: translate3d(0,0,0);
+            -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+            clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+          }
+        }
+    }
+  
+
+    @media screen and (min-width: 300px) and (max-width: 577px) {
+
+      /* .titlebox{
+        border: 3px solid red;
+      } */
+
+       .bmdlogo{
+         display: none;
+         border: 3px solid red; 
+      }
+
+       .bmdsymbol{
+        display: flex;
+        margin: auto;
+        min-width: 330px;
+        min-height: 300px;
+        /* width: 800px; */
+        max-width: 100%;
+        max-height: 100%;
+        padding: 2%;
+        position: absolute; 
+        color: #b3d4fc; 
+      }
+    } 
